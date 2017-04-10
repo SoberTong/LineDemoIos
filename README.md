@@ -39,10 +39,7 @@
 ## Step.6
 ### LINE分享（详细见Demo）
 ### 需要在info.plist中加入以下代码：
-·<key>LSApplicationQueriesSchemes</key>
-<array>
-<string>line</string>
-</array>·
+![](pictures/step6.0.png)
 ### 分享文字
 ![](pictures/step6.1.png)
 ### 分享图片

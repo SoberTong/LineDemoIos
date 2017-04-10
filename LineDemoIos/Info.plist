@@ -50,6 +50,7 @@
     </array>
     <key>LSApplicationQueriesSchemes</key>
     <array>
+        <string>line</string>
         <string>lineauth</string>
         <string>line3rdp.$(PRODUCT_BUNDLE_IDENTIFIER)</string>
     </array>

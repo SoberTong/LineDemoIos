@@ -46,11 +46,19 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jTz-qa-awB">
-                                <rect key="frame" x="147" y="335" width="81" height="30"/>
+                                <rect key="frame" x="133" y="335" width="109" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Line Send"/>
+                                <state key="normal" title="Line Share Text"/>
                                 <connections>
-                                    <action selector="lineSend:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nD7-zT-zXQ"/>
+                                    <action selector="lineShareText:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vP9-J9-Gce"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M5F-qr-IJW">
+                                <rect key="frame" x="127" y="373" width="120" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Line Share Image"/>
+                                <connections>
+                                    <action selector="lineShareImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="beL-N3-3RG"/>
                                 </connections>
                             </button>
                         </subviews>

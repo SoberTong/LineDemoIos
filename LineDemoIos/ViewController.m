@@ -81,9 +81,13 @@
         }];
      */
 }
-    
-- (IBAction)lineSend:(id)sender {
-    NSURL *appURL = [NSURL URLWithString:@"line://msg/text/IamHappyMan:)"];
+
+//分享文字
+- (IBAction)lineShareText:(id)sender {
+    NSString *contentType = @"text";
+    NSString *urlString = [NSString stringWithFormat:@"line://msg/%@/%@",contentType, @"来自IosDemo的文字分享"];
+    NSString *urlStringUtf8 = [urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    NSURL *appURL = [NSURL URLWithString:urlStringUtf8];
     if ([[UIApplication sharedApplication] canOpenURL: appURL]) {
         [[UIApplication sharedApplication] openURL: appURL];
     }
@@ -92,4 +96,25 @@
         [[UIApplication sharedApplication] openURL:itunesURL];
     }
 }
+
+//分享图片
+- (IBAction)lineShareImage:(id)sender {
+    UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
+    //这是图片url http://pics.sc.chinaz.com/files/pic/pic9/201508/apic14052.jpg
+    NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:@"http://pics.sc.chinaz.com/files/pic/pic9/201508/apic14052.jpg"]];
+    UIImage *image = [UIImage imageWithData:data];
+    [pasteboard setData:UIImageJPEGRepresentation(image, 0.9) forPasteboardType:@"public.jpeg"];
+    NSString *contentType =@"image";
+    NSString *contentKey = [pasteboard.name stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    NSString *urlString = [NSString stringWithFormat:@"line://msg/%@/%@",contentType, contentKey];
+    NSURL *appURL = [NSURL URLWithString:urlString];
+    if ([[UIApplication sharedApplication] canOpenURL: appURL]) {
+        [[UIApplication sharedApplication] openURL: appURL];
+    }
+    else { //如果使用者沒有安裝，連結到App Store
+        NSURL *itunesURL = [NSURL URLWithString:@"itms-apps://itunes.apple.com/app/id443904275"];
+        [[UIApplication sharedApplication] openURL:itunesURL];
+    }
+}
+
 @end
